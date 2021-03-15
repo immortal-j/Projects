@@ -1,0 +1,17 @@
+html,#root,body{
+  height:100%;
+  margin:0;
+}
+body{
+   background: url(./assets/image/heartpulse.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
