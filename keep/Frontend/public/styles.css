@@ -7,13 +7,15 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: #eee;
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  background-color: #000;
+  background-image: url("https://www.transparenttextures.com/patterns/diagonal-striped-brick.png");
+ 
   padding: 0 16px;
+  overflow-x: hidden;
 }
 
 header {
-  background-color: #f5ba13;
+  background-color: transparent;
   margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -34,7 +36,7 @@ footer {
 }
 
 footer p {
-  color: #ccc;
+  color: #eee;
 }
 .note {
   background: #fff;
@@ -46,8 +48,9 @@ footer p {
   float: left;
 }
 .note h1 {
-  font-size: 1.1em;
+  font-size: 1.5em;
   margin-bottom: 6px;
+  
 }
 .note p {
   font-size: 1.1em;
@@ -60,12 +63,16 @@ footer p {
   position: relative;
   float: right;
   margin-right: 10px;
-  color: #f5ba13;
+  color: #ff0000;
+  background-color: #fff;
   border: none;
   width: 36px;
   height: 36px;
   cursor: pointer;
   outline: none;
+}
+.note button:hover{
+  background-color: #eee;
 }
 
 form.create-note {
@@ -91,7 +98,7 @@ form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;
-  background: #f5ba13;
+  background: #39FF14;
   color: #fff;
   border: none;
   border-radius: 50%;

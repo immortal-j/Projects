@@ -6,39 +6,38 @@ import CreateArea from "./CreateArea";
 import axios from "axios";
 function App() {
   const [notes, setNotes] = useState([]);
-  const [x,setx]=useState("");
-  useEffect(()=>{
-    async function getdata(){
-      const res=await axios.get(`/hello`);
-      setx(res.data);
-      console.log(x);
-    }
+  useEffect(() => {
     getdata();
-  })
+  }, []);
+  async function getdata(){
+    const res=await axios.get(`/hello`);
+    setNotes(prevNotes => {
+      return res.data;
+    });
+  }
   function addNote(newNote) {
     setNotes(prevNotes => {
       return [...prevNotes, newNote];
     });
+    axios.post(`/hello`,newNote);
+    getdata();
   }
 
   function deleteNote(id) {
-    setNotes(prevNotes => {
-      return prevNotes.filter((noteItem, index) => {
-        return index !== id;
-      });
-    });
+    axios.post(`/delete`,{id:id});
+    getdata();
+  
   }
 
   return (
     <div>
-    <h1>hel{x}</h1>
       <Header />
       <CreateArea onAdd={addNote} />
       {notes.map((noteItem, index) => {
         return (
           <Note
             key={index}
-            id={index}
+            id={noteItem._id}
             title={noteItem.title}
             content={noteItem.content}
             onDelete={deleteNote}
