@@ -38,8 +38,6 @@ function App() {
        <Route exact path="/excercise">
          <Excercise/>
        </Route>
-       
-         
        <Redirect to="/"/>
      </Switch>
     </div>
